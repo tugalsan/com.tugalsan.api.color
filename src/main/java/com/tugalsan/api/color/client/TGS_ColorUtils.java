@@ -18,8 +18,8 @@ public class TGS_ColorUtils {
     }
 
     public static TGS_Tuple3<Integer, Integer, Integer> toRGB(CharSequence colorHex) {
-        int[] b = TGS_HexUtils.toInt(colorHex);
-        return new TGS_Tuple3(b[2], b[1], b[0]);
+        var b = TGS_HexUtils.toInt(colorHex);
+        return TGS_Tuple3.of(b[2], b[1], b[0]);
     }
 
     public static String toRGBString(int red0_255, int green0_255, int blue0_255) {
@@ -28,7 +28,6 @@ public class TGS_ColorUtils {
 
     public static TGS_Tuple3<Integer, Integer, Integer> HSBtoRGB(int hue, int saturation, int brightness) {
         int r = 0, g = 0, b = 0;
-
         brightness = (int) (brightness * 2.55);
         if (saturation == 0) {
             r = g = b = brightness;
@@ -71,6 +70,6 @@ public class TGS_ColorUtils {
                     break;
             }
         }
-        return new TGS_Tuple3(r, g, b);
+        return TGS_Tuple3.of(r, g, b);
     }
 }
