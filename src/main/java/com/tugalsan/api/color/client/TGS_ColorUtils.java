@@ -1,11 +1,11 @@
 package com.tugalsan.api.color.client;
 
 import com.tugalsan.api.hex.client.*;
-import com.tugalsan.api.pack.client.*;
+import com.tugalsan.api.tuple.client.*;
 
 public class TGS_ColorUtils {
  
-    public static String toHex(TGS_Pack3<Integer, Integer, Integer> colorRGB) {
+    public static String toHex(TGS_Tuple3<Integer, Integer, Integer> colorRGB) {
         return TGS_HexUtils.toHex(new int[]{colorRGB.value0, colorRGB.value1, colorRGB.value2});
     }
 
@@ -17,16 +17,16 @@ public class TGS_ColorUtils {
         return toHex(rgb);
     }
 
-    public static TGS_Pack3<Integer, Integer, Integer> toRGB(CharSequence colorHex) {
+    public static TGS_Tuple3<Integer, Integer, Integer> toRGB(CharSequence colorHex) {
         int[] b = TGS_HexUtils.toInt(colorHex);
-        return new TGS_Pack3(b[2], b[1], b[0]);
+        return new TGS_Tuple3(b[2], b[1], b[0]);
     }
 
     public static String toRGBString(int red0_255, int green0_255, int blue0_255) {
         return "rgb(" + red0_255 + "," + green0_255 + "," + blue0_255 + ")";
     }
 
-    public static TGS_Pack3<Integer, Integer, Integer> HSBtoRGB(int hue, int saturation, int brightness) {
+    public static TGS_Tuple3<Integer, Integer, Integer> HSBtoRGB(int hue, int saturation, int brightness) {
         int r = 0, g = 0, b = 0;
 
         brightness = (int) (brightness * 2.55);
@@ -71,6 +71,6 @@ public class TGS_ColorUtils {
                     break;
             }
         }
-        return new TGS_Pack3(r, g, b);
+        return new TGS_Tuple3(r, g, b);
     }
 }
