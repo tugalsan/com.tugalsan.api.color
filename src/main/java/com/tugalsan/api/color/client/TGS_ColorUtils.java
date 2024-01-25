@@ -32,11 +32,11 @@ public class TGS_ColorUtils {
         if (saturation == 0) {
             r = g = b = brightness;
         } else {
-            double h = hue / 60.0;
-            double f = h - Math.floor(h);
-            int p = (brightness * (100 - saturation)) / 100;
-            int q = (int) ((brightness * (100 - (saturation * f))) / 100);
-            int t = (int) (brightness * (100 - (saturation * (1.0 - f)))) / 100;
+            var h = hue / 60.0;
+            var f = h - Math.floor(h);
+            var p = (brightness * (100 - saturation)) / 100;
+            var q = (int) ((brightness * (100 - (saturation * f))) / 100);
+            var t = (int) (brightness * (100 - (saturation * (1.0 - f)))) / 100;
             switch ((int) h) {
                 case 0:
                     r = brightness;
