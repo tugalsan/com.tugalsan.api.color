@@ -5,15 +5,15 @@ import com.tugalsan.api.hex.client.*;
 public class TGS_ColorUtils {
 
     public static String toHex(TGS_Color colorRGB) {
-        return TGS_HexUtils.toHex(new int[]{colorRGB.r(), colorRGB.g(), colorRGB.b()});
+        return TGS_HexUtils.toHex(new int[]{colorRGB.r, colorRGB.g, colorRGB.b});
     }
 
     public static String toHexInverted(CharSequence hex) {
         var rgb = toRGB(hex);
         return toHex(new TGS_Color(
-                255 - rgb.r(),
-                255 - rgb.g(),
-                255 - rgb.b()
+                255 - rgb.r,
+                255 - rgb.g,
+                255 - rgb.b
         ));
     }
 
