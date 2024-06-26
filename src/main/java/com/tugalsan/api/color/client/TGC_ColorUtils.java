@@ -23,7 +23,7 @@ public class TGC_ColorUtils {
     }
 
     public static CssColor createHSL(int hue_0_360, int saturation_0_100, int lightness_0_100) {
-        return CssColor.make(TGS_StringUtils.concat(
+        return CssColor.make(TGS_StringUtils.cmn().concat(
                 "hsl(",
                 String.valueOf(hue_0_360), ", ",
                 String.valueOf(saturation_0_100), "%,",
@@ -43,7 +43,7 @@ public class TGC_ColorUtils {
     public static CssColor create(int red, int green, int blue, float alpha) {
         alpha *= 100;
         alpha = Math.round(alpha) / 100f;
-        return CssColor.make(TGS_StringUtils.concat(
+        return CssColor.make(TGS_StringUtils.cmn().concat(
                 "rgba(",
                 String.valueOf(red), ", ",
                 String.valueOf(green), ",",
