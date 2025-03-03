@@ -25,46 +25,46 @@ public class TGS_ColorUtils {
     public static String toRGBString(int red0_255, int green0_255, int blue0_255) {
         return "rgb(" + red0_255 + "," + green0_255 + "," + blue0_255 + ")";
     }
-
-    public static TGS_Color HSBtoRGB(int hue, int saturation, int brightness) {
+    
+    public static TGS_Color HSBtoRGB(int hue0_360, int saturation0_100, int brightness0_100) {
         int r = 0, g = 0, b = 0;
-        brightness = (int) (brightness * 2.55);
-        if (saturation == 0) {
-            r = g = b = brightness;
+        brightness0_100 = (int) (brightness0_100 * 2.55);
+        if (saturation0_100 == 0) {
+            r = g = b = brightness0_100;
         } else {
-            var h = hue / 60.0;
+            var h = hue0_360 / 60.0;
             var f = h - Math.floor(h);
-            var p = (brightness * (100 - saturation)) / 100;
-            var q = (int) ((brightness * (100 - (saturation * f))) / 100);
-            var t = (int) (brightness * (100 - (saturation * (1.0 - f)))) / 100;
+            var p = (brightness0_100 * (100 - saturation0_100)) / 100;
+            var q = (int) ((brightness0_100 * (100 - (saturation0_100 * f))) / 100);
+            var t = (int) (brightness0_100 * (100 - (saturation0_100 * (1.0 - f)))) / 100;
             switch ((int) h) {
                 case 0:
-                    r = brightness;
+                    r = brightness0_100;
                     g = t;
                     b = p;
                     break;
                 case 1:
                     r = q;
-                    g = brightness;
+                    g = brightness0_100;
                     b = p;
                     break;
                 case 2:
                     r = p;
-                    g = brightness;
+                    g = brightness0_100;
                     b = t;
                     break;
                 case 3:
                     r = p;
                     g = q;
-                    b = brightness;
+                    b = brightness0_100;
                     break;
                 case 4:
                     r = t;
                     g = p;
-                    b = brightness;
+                    b = brightness0_100;
                     break;
                 case 5:
-                    r = brightness;
+                    r = brightness0_100;
                     g = p;
                     b = q;
                     break;
